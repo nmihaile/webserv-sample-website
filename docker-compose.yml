@@ -1,0 +1,31 @@
+
+# ==============================================================================
+#  PLEASE UPDATE THE PATH TO THE WEBSERV REPOSETORY
+#  ------------------------------------------------
+#
+# volumes:
+#   - /PATH/TO/REPOSETORY/:/app/
+#   - /Users/$USER/.../webserv/:/app/
+#
+# ==============================================================================
+
+services:
+  webserv_service:
+    build: .
+    container_name: webserv
+    image: webserv:latest
+    ports:
+      - 7000-9000:7000-9000
+    volumes:
+      - /Users/$USER/.../webserv/:/app/
+      - ./:/var/www/html/
+      - ./sample.conf:/app/sample.conf
+      - ./siege.conf:/app/siege.conf
+      - ./port01.conf:/app/port01.conf
+      - ./port02.conf:/app/port02.conf
+      - ./port03foo.conf:/app/port03foo.conf
+      - ./port03bar.conf:/app/port03bar.conf
+    working_dir: /app
+    stdin_open: true
+    tty: true
+    command: /bin/bash
