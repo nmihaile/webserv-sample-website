@@ -11,7 +11,7 @@ import signal
 def construct_response_body(request_body):
 	body = ''
 	body += '<html><head><style>'
-	body += 'body{background-color:	;color:white;font-family:Consolas,Monaco,Courier New;}'
+	body += 'body{background-color:	DarkSlateGray;color:white;font-family:Consolas,Monaco,Courier New;}'
 	body += '</style></head>'
 	
 	body += '<body>'
