@@ -27,3 +27,20 @@ docker exec -it webserv bash
 make
 ./webserv sample.conf
 ```
+
+# Benchmark `webserv` with Siege
+To stress test `webserv` instance, open two terminal windows:
+```sh
+# Terminal 01
+./webserv siege.conf
+```
+
+```sh
+# Terminal 02
+
+# Basic benchmark test
+siege -b http://localhost:8080
+
+# Advanced benchmark with 255 concurrent users for 30 seconds
+siege -b -c255 -t30s http://localhost:8080
+```
