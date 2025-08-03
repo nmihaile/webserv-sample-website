@@ -34,12 +34,18 @@
 		<div class="flex flex-col mt-16 mx-auto w-sm p-6 bg-sky-950/15 border border-sky-400/25 rounded-xl">
 			<div class="uppercase text-xs tracking-widest text-sky-400 text-left">
 				<div class="inline-block pb-1 mb-1 border-b border-sky-900/25">
-					ask the oracle
+					ask the oracle any question:
 				</div>
 			</div>
 
-			<div class="flex flex-row mt-4 text-lime-400 space-x-2">
+			<form onsubmit="askOracle(event)" class="mt-4" id="oracleForm">
+				<textarea name="" id="" rows="4" class="block w-full p-2 text-sky-100 bg-sky-950/25 border border-sky-900/25 focus:outline-none resize-none rounded-lg"></textarea>
+				<button class="block mt-4 w-full leading-10 text-sky-100 hover:text-sky-50 bg-sky-700 hover:bg-sky-900 active:text-white active:bg-sky-950 cursor-pointer rounded-full">
+					Ask now…
+				</button>
+			</form>
 
+			<div class="hidden flex-row mt-4 text-lime-400 space-x-2" id="oracleAnswer">
 				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 					<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 				</svg>
@@ -60,6 +66,19 @@
 
 	</main>
 
+<script>
+function askOracle(event) {
+	event.preventDefault(); // stop normal form submission
+
+	let form = document.getElementById('oracleForm');
+	let answer = document.getElementById('oracleAnswer');
+
+	if (form && answer) {
+		form.style.display = 'none';
+		answer.style.display = 'flex';
+	}
+}
+</script>
 
 </body>
 </html>
