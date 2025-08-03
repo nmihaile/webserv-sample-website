@@ -1,6 +1,8 @@
 IMAGE_NAME	=	webserv
 TAG			=	latest
 
+RED				=	\033[31m
+GREEN			=	\033[32m
 LIGHTRED		=	\033[91m
 LIGHTGREEN		=	\033[92m
 BOLD			=	\033[1m
@@ -9,12 +11,12 @@ RESET			=	\033[0m
 
 up:
 	docker compose up -d
-	@echo "$(LIGHTGREEN)Docker container $(BOLD)webserv$(REGULAR) is running$(RESET)"
-	@echo "$(LIGHTGREEN)Execute the webserv container interactively with: $(BOLD)docker exec -it webserv bash$(RESET)"
+	@echo "$(GREEN)Docker container $(BOLD)webserv$(REGULAR) is running$(RESET)"
+	@echo "$(GREEN)Execute the $(LIGHGREEN)webserv$(GREEN) container interactively with: $(LIGHTGREEN)$(BOLD)docker exec -it webserv bash$(RESET)"
 
 down:
 	docker compose down
-	@echo "$(LIGHTRED)Stoped docker container $(bold)webserv$(RESET)"
+	@echo "$(RED)Stopped docker container: $(LIGHTRED)$(bold)webserv$(RESET)"
 
 build:
 	docker compose build
