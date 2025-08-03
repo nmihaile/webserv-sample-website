@@ -13,7 +13,6 @@ RUN apt-get update && apt-get upgrade -y && \
 	python3 \
     siege
 
-RUN mkdir -p /var/www/html/
-RUN mkdir -p /app
+RUN mkdir -p /var/www/html /app
 
 CMD ["bash"]
