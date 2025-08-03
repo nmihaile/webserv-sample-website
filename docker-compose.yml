@@ -1,11 +1,6 @@
 
 # ==============================================================================
-#  PLEASE UPDATE THE PATH TO THE WEBSERV REPOSETORY
-#  ------------------------------------------------
-#
-# volumes:
-#   - /PATH/TO/REPOSETORY/:/app/
-#
+#  PLEASE MAKE SURE YOU HAVE AVALID .ENV FILE
 # ==============================================================================
 
 services:
@@ -16,7 +11,7 @@ services:
     ports:
       - 7000-9000:7000-9000
     volumes:
-      - /PATH/TO/REPOSETORY/:/app/
+      - ${REPO_PATH}:/app/
       - ./:/var/www/html/
       - ./sample.conf:/app/sample.conf
       - ./siege.conf:/app/siege.conf
